@@ -1,0 +1,255 @@
+/* ==================== Palette & Typography ==================== */
+:root{
+  --mint:#0CE3CA;           /* glow accent */
+  --mint-700:#04bf9d;       /* bright teal */
+  --teal:#015958;           /* deep teal (links/headings) */
+  --teal-900:#013D3F;       /* darker teal */
+  --ink:#21241c;            /* body text / borders */
+  --bg:#ffffff;
+  --overlay: rgba(255,255,255,.92);
+  --glass: rgba(255,255,255,.85);
+}
+html{scroll-behavior:smooth}
+body{
+  margin:auto;
+  padding:1em;
+  max-width:1260px;
+  color:var(--ink);
+  background:var(--bg);
+  font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+h1,h2,h3{font-family:"Cinzel",serif}
+h1,h2{color:var(--teal-900)}
+h3{color:var(--teal)}
+a{color:var(--teal);cursor:pointer}
+a:visited{color:var(--teal-900)}
+/* heading links */
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
+  color:var(--teal);
+  text-decoration:underline;
+  text-underline-offset:4px;
+  font-weight:600;
+  transition:color .25s ease,text-decoration-color .25s ease;
+}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,
+h1 a:focus,h2 a:focus,h3 a:focus,h4 a:focus,h5 a:focus,h6 a:focus{
+  color:var(--mint-700); text-decoration-color:var(--mint-700);
+}
+
+/* ==================== Header / Nav ==================== */
+.site-header{padding-top:.25rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand img{display:block}
+.site-nav .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1.25rem}
+.site-nav a{
+  text-decoration:none;color:var(--teal);
+  font-size:1.05rem;letter-spacing:.02em;padding:.5rem .25rem;
+  transition:color .25s ease,font-size .25s ease;
+}
+.site-nav a:hover,.site-nav a:focus{
+  color:var(--mint-700);text-decoration:underline;text-underline-offset:4px;
+}
+.site-nav a.active,.site-nav [aria-current="page"]{
+  font-size:1.2rem;font-weight:700;font-family:"Cinzel",serif;
+  color:var(--teal-900);text-decoration:none;
+}
+
+/* ==================== Hero ==================== */
+.hero{margin-block:.5rem 1rem}
+.hero-figure{margin:0;border:1px solid #000}
+.hero-figure img{display:block;width:100%;height:auto}
+
+/* ==================== Sections ==================== */
+.section{padding:1rem 0}
+.section-header h2{text-align:center;padding:0 0 .5rem;letter-spacing:.5px}
+.bordered{border:1px solid var(--ink);padding:30px;background:var(--bg)}
+
+/* ==================== Home intro grid (if used elsewhere) ==================== */
+.about-grid{
+  display:grid;grid-template-columns:460px 1fr;gap:24px;align-items:start;
+}
+.eyebrow{font-family:"Cinzel",serif;color:var(--teal-900);font-weight:700;line-height:1.1;margin:0 0 12px}
+.studio-figure{margin:0}
+.studio-figure img{width:100%;height:auto;display:block}
+.about-content p{margin:0 0 12px 0}
+.about-cta a{color:var(--mint-700);text-decoration:underline}
+
+/* ==================== ABOUT page – mirrored profile (text left, portrait right) ==================== */
+.artist_intro{
+  text-decoration:underline;color:var(--teal-900);
+  text-align:center;padding:10px 0;margin:0 0 10px;
+}
+.artist.section{
+  display:grid;
+  grid-template-columns: 1fr 520px; /* text column + portrait column */
+  gap:26px;
+  align-items:start;
+}
+.artist-bio{padding:0 10px}
+.artist-bio p{margin:0 0 12px;line-height:1.5}
+.artist-portrait{margin:0}
+.artist-portrait img{
+  width:520px;height:640px;object-fit:cover;display:block;border-radius:2px;
+  box-shadow:
+    0 0 22px rgba(12,227,202,.55),
+    0 10px 28px rgba(0,0,0,.18),
+    0 0 0 1px rgba(0,0,0,.18);
+}
+
+/* ==================== Gallery ==================== */
+.gallery{text-align:center;padding-bottom:60px}
+.gallery h2{text-decoration:underline}
+.card-grid{
+  list-style:none;margin:10px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;justify-items:center;
+}
+.card{width:335px;height:360px;margin:0;border:1px solid var(--ink);background:#fff;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card{box-shadow:0 0 0 4px rgba(12,227,202,.25) inset}
+
+/* ==================== Booking / Contact ==================== */
+.content{
+  padding:2em;background-image:url(./images/siren_background.png);
+  background-size:cover;background-position:center;text-align:center;
+}
+.centered-message{
+  max-width:800px;margin:0 auto 20px auto;padding:2em;
+  font-family:"Cinzel",serif;color:#023535;background-color:var(--overlay);
+  text-align:left;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.15);
+}
+.contact-wrapper{display:flex;justify-content:center;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-top:10px}
+.contact,.form{
+  max-width:600px;flex:1;min-width:420px;padding:1.5em;border:1px solid #ddd;border-radius:6px;
+  background-color:var(--glass);text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.12);
+}
+.contact h2,.form h2{font-family:"Cinzel",serif;color:var(--teal-900);margin-top:0}
+.contact table{width:100%;border-collapse:collapse;margin-top:14px;border-radius:5px;overflow:hidden}
+.contact table,.contact th,.contact td{border:1px solid #ddd}
+.contact th,.contact td{padding:10px;text-align:left}
+.contact th{background:#023535;color:#fff;font-family:"Cinzel",serif}
+.contact-form label{font-family:"Cinzel",serif;color:#023535;display:block;margin:.75em 0 .35em}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:.6em;border:1px solid #ddd;border-radius:5px;font-family:"Open Sans",sans-serif;background:#fff;
+}
+.contact-form button{
+  display:inline-block;margin-top:.5em;padding:.7em 2em;border:none;border-radius:6px;
+  background-color:var(--teal);color:#fff;font-family:"Cinzel",serif;font-size:larger;cursor:pointer;
+  transition:background-color .25s ease,transform .06s ease;
+}
+.contact-form button:hover{background-color:#023535}
+.contact-form button:active{transform:translateY(1px)}
+
+/* ==================== FAQ ==================== */
+.faq{background-image:url(./images/siren_background.png);background-size:cover;background-position:center;padding-bottom:60px}
+.faq-title{text-align:center;color:#0CABA8;text-decoration:underline;margin-top:0;padding-top:10px}
+.faq-section{
+  max-width:860px;margin:0 auto;padding:1.25em 1.25em 1.5em;border:1px solid #ddd;border-radius:6px;background-color:var(--glass);
+  box-shadow:0 6px 24px rgba(0,0,0,.12);
+}
+.faq-item{margin-bottom:1.25em}
+.faq-item h3{margin:0 0 .5em 0;color:var(--teal-900);font-weight:700}
+.faq-item p{margin:0}
+
+/* ==================== Footer (centered, hamburger opens upward) ==================== */
+.site-footer{
+  display:flex;justify-content:center;padding-top:30px;background:var(--bg);
+}
+.footer-inner{
+  /* GRID ensures address block is dead-center between brand & menu */
+  display:grid;
+  grid-template-columns: 1fr minmax(280px, 520px) 1fr; /* left | centered address | right */
+  align-items:center;
+  gap:20px;
+  width:100%;
+  max-width:1260px;
+}
+.footer-logo{max-height:30px;max-width:108px;justify-self:start}
+
+/* address/contact centered in the middle column */
+address.contact{
+  grid-column:2;            /* middle column */
+  justify-self:center;      /* center in that column */
+  max-width:420px;
+  font-size:12px;
+  text-align:center;
+  font-style:normal;
+  margin:0;
+}
+.contact-info{color:#0CABA8;margin-bottom:.5em}
+.contact-info a{color:var(--teal-900)}
+
+/* footer nav sits on the right column; menu opens UP */
+.footer-nav{
+  grid-column:3;            /* right column */
+  justify-self:end;
+  position:relative;        /* anchor for absolute panel */
+}
+
+/* hamburger UI */
+.hamburger{position:relative}
+.hamburger summary{list-style:none;cursor:pointer}
+.hamburger summary::-webkit-details-marker{display:none}
+.hamburger-toggle{
+  display:flex;align-items:center;gap:.5rem;
+  font-family:"Cinzel",serif;font-size:.95rem;color:var(--teal);cursor:pointer;
+}
+.hamburger-toggle:hover{color:var(--mint-700)}
+.hamburger-icon{
+  display:inline-block;width:20px;height:2px;background:var(--teal-900);position:relative;
+}
+.hamburger-icon::before,.hamburger-icon::after{
+  content:"";position:absolute;left:0;width:20px;height:2px;background:var(--teal-900);
+}
+.hamburger-icon::before{top:-6px}
+.hamburger-icon::after{top:6px}
+
+/* DROPDOWN PANEL — positioned ABOVE the toggle */
+.hamburger-panel{
+  position:absolute;
+  bottom: calc(100% + 10px);    /* ⬆️ open UPWARD above the toggle */
+  right: 0;
+  z-index: 50;
+  display:flex;
+  flex-direction:column;
+  min-width: 220px;
+  padding:.75rem;
+  background:var(--glass);
+  border:1px solid #ddd;
+  border-radius:6px;
+  box-shadow:0 -6px 16px rgba(0,0,0,.12); /* shadow above */
+}
+.hamburger[open] .hamburger-panel{display:flex}
+.hamburger-panel a{
+  padding:.4rem 0;font-family:"Cinzel",serif;color:var(--teal-900);
+  text-decoration:none;transition:color .25s ease;
+}
+.hamburger-panel a:hover{color:var(--mint-700);text-decoration:underline}
+
+/* ==================== Responsive (desktop-first) ==================== */
+@media (max-width: 1040px){
+  .artist.section{grid-template-columns: 1fr 480px}
+  .artist-portrait img{width:480px;height:600px}
+}
+@media (max-width: 980px){
+  .about-grid{grid-template-columns:1fr}
+  .artist.section{grid-template-columns:1fr}
+  .artist-portrait img{width:100%;height:auto}
+  .card-grid{grid-template-columns:1fr 1fr}
+  .contact,.form{min-width:unset}
+}
+@media (max-width: 720px){
+  /* Footer stacks but keeps address centered */
+  .footer-inner{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap: 14px;
+  }
+  .footer-logo{justify-self:center}
+  address.contact{grid-column:1;justify-self:center}
+  .footer-nav{grid-column:1;justify-self:center}
+  /* keep upward dropdown; center it on narrow screens */
+  .hamburger-panel{right:auto;left:50%;transform:translateX(-50%)}
+}
+@media (max-width: 640px){
+  .card-grid{grid-template-columns:1fr}  /* gallery stacks vertically */
+}
