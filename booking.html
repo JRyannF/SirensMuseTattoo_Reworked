@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Siren’s Muse Tattoo — Booking & Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Contact Siren’s Muse Tattoo to book an appointment or ask questions. Find contact information and send a message to Aurelia Hawthorne."
+  />
+  <link rel="stylesheet" href="./Resources/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html" aria-label="Siren’s Muse Tattoo — Home">
+        <img src="./Resources/images/logo.png" alt="Siren’s Muse logo" width="160" height="40" />
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Welcome</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a class="active" href="booking.html" aria-current="page">Booking &amp; Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero page-header" aria-label="Booking banner">
+      <figure class="hero-figure">
+        <img
+          class="header-logo"
+          src="./Resources/images/page-headers.png"
+          alt="Siren’s Muse neon sign with mermaid illustrations in the background"
+          width="1600"
+          height="420"
+        />
+      </figure>
+    </section>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="content">
+    <h1 class="faq-title" style="text-decoration: underline;">Contact Us</h1>
+
+    <p class="centered-message"><strong>
+      Have a question or ready to book your tattoo appointment? I’m here to help!<br><br>
+      Fill out the form with your name, email address, and message. Whether you’re looking to discuss tattoo ideas, schedule a consultation, or just say hi, I’ll get back to you as soon as possible.<br><br>
+      Your satisfaction is my top priority, and I’m dedicated to making your Siren’s Muse experience exceptional. I can’t wait to hear from you!
+    </strong></p>
+
+    <!-- Two-up: contact info + form -->
+    <div class="contact-wrapper">
+      <!-- Contact info panel -->
+      <section class="contact bordered" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title">Contact Information</h2>
+        <address style="font-style: normal;">
+          <p><strong>Email:</strong> <a href="mailto:aurelia@sirensmuse.com">aurelia@sirensmuse.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
+          <p><strong>Studio:</strong> SIREN’S MUSE TATTOO<br>
+            123 Oceanview Avenue, Mystic Harbor, MA 02468
+          </p>
+        </address>
+      </section>
+
+      <!-- Contact form panel -->
+      <section class="form bordered" aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title">Send a Message</h2>
+        <form class="contact-form" action="welcome.php" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer with hamburger nav -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- Brand -->
+      <a class="brand" href="index.html" aria-label="Siren’s Muse Tattoo — Home">
+        <img class="footer-logo" src="./Resources/images/footer_logo.png" alt="Siren’s Muse logo" width="140" height="40" />
+      </a>
+
+      <!-- Address / contact -->
+      <address class="contact" aria-label="Studio contact">
+        <p class="contact-info">
+          SIREN’S MUSE TATTOO · 123 Oceanview Avenue, Mystic Harbor, MA 02468 ·
+          <a href="tel:+15551234567">(555) 123-4567</a> ·
+          <a href="mailto:aurelia@sirensmuse.com">aurelia@sirensmuse.com</a>
+        </p>
+        <p class="copyright">
+          &copy; <time datetime="2019">2019</time>–<time datetime="2025">2025</time> Siren’s Muse Tattoo.
+          All rights reserved. <a href="./privacy_policy.html">Privacy Policy</a>
+        </p>
+      </address>
+
+      <!-- Footer navigation with hamburger -->
+      <nav class="footer-nav" aria-label="Site">
+        <details class="hamburger">
+          <summary class="hamburger-toggle" aria-label="Open site menu">
+            <span class="hamburger-icon" aria-hidden="true"></span>
+            <span class="hamburger-label">Menu</span>
+          </summary>
+          <div class="hamburger-panel" role="group" aria-label="Footer menu">
+            <a href="index.html">Welcome</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html" aria-current="page">Booking &amp; Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Auto-close footer hamburger -->
+  <script>
+    (function () {
+      const details = document.querySelector('.hamburger');
+      if (!details) return;
+      details.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (a) details.open = false;
+      });
+      document.addEventListener('click', (e) => {
+        if (!details.contains(e.target)) details.open = false;
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') details.open = false;
+      });
+    })();
+  </script>
+</body>
+</html>
